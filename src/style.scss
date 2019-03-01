@@ -1,0 +1,240 @@
+/*
+Theme Name: Candid
+Text Domain: candid
+Version: 1.0.0
+License: GNU General Public License version 2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+All files, unless otherwise stated, are released under the GNU General Public License
+version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
+*/
+
+@import 'vars.scss';
+
+html, body {
+	width: 100%;
+	margin: 0;
+	background: #fff;
+	font-family: 'Algebra', serif;
+	@include xsText;
+}
+
+body {
+	display: table;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5 {
+	margin: 0;
+	font-weight: normal;
+}
+h1 {
+	@include xxlText;
+}
+h2 {
+	@include xlText;
+}
+h3 {
+	@include lgText;
+}
+h4 {
+	@include mdText;
+}
+h5 {
+	@include smText;
+}
+
+a, a:visited {
+	text-decoration: none;
+	color: black;
+}
+
+p {
+	margin: 0;
+	&:not(:first-of-type) {
+		text-indent: 1.5rem;
+	}
+}
+
+.mobile {
+	@include hide;
+}
+
+@include sm {
+	.mobile {
+		@include show;
+	}
+	.desktop {
+		@include hide;
+	}
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+li {
+	margin: 0 0 1rem 0;
+}
+
+h2, h3, p {
+	a {
+		padding-bottom: 2px;
+		background-image: linear-gradient(white 50%, $orange 50%);
+		background-position: 0 100%;
+		background-repeat: repeat-x;
+    background-size: 2px 2px;
+	  text-shadow:
+	    1px 1px white,
+	    1px -1px white,
+	    -1px 1px white,
+	    -1px -1px white;
+	}
+}
+
+
+.candid-logo {
+	.logo-text {
+		font-family: 'Candid';
+	}
+	.screen-reader-text {
+		@include hide;
+	}
+}
+
+aside {
+	width: 20rem;
+	height: 100%;
+	padding: 1rem 2rem;
+	position: fixed;
+	left: 0;
+	top: 0;
+	overflow-y: scroll;
+	border-right: 2px solid $orange;
+	header {
+		width: 100%;
+		height: 4.8rem;
+	}
+}
+
+nav {
+
+}
+
+.page-group {
+	display: block;
+	margin: 0 0 .5rem 0;
+}
+.page-link {
+	display: block;
+	font-weight: bold;
+}
+.section-links {
+	height: 0;
+	overflow: hidden;
+	transition: all 300ms ease-in-out;
+}
+.section-link {
+	display: block;
+	text-indent: -1em;
+	margin-left: 1em;
+	&::before {
+		content: '— ';
+		color: $orange;
+	}
+}
+
+main {
+	width: 100%;
+	padding: 3rem 0 0 20rem;
+}
+
+article.page {
+	
+}
+h2.page-title {
+	padding: 1rem 0 2rem 0;
+}
+h3.page-copy {
+	padding: 0 0 4rem 0;
+}
+
+section {
+	width: 100%;
+	margin: 0 0 3rem 0;
+}
+.section-title {
+	padding: 1rem 0;
+}
+.section-copy {
+	padding: 0 0 2rem 0;
+}
+.section-gallery {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+.gallery-image {
+	width: 50%;
+	margin: 0 0 1rem 0;
+	img {
+		width: 100%;
+		height: auto;
+		display: table;
+	}
+	&:nth-child(odd) {
+		padding-right: .5rem;
+	}
+	&:nth-child(even) {
+		padding-left: .5rem;
+	}
+}
+
+header#header {
+	padding: 0 0 10rem 0;
+}
+
+.inner {
+	width: 100%;
+	max-width: 1200px;
+	padding: 2rem;
+}
+
+
+
+// .cols {
+// 	display: flex;
+// 	flex-direction: row;
+// 	flex-wrap: wrap;	
+// 	img {
+// 		width: 100%;
+// 		height: auto;
+// 	}
+// 	@include sm {
+// 		h3 {
+// 			margin-bottom: 16px;
+// 		}
+// 	}
+// }
+// .col-sm {
+// 	width: 30%;
+// }
+// .col-md {
+// 	width: 50%;
+// }
+// .col-lg {
+// 	width: calc(70% - 2rem;);
+// 	margin-left: 2rem;
+// }
+// .col-sm, .col-lg {
+// 	@include sm {
+// 		width: 100%;
+// 		max-width: 100%;
+// 		margin: 0;
+// 	}
+// }

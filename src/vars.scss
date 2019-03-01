@@ -1,0 +1,159 @@
+$yellow: #febe10;
+$orange: #faa21b;
+
+
+$light: #efecea;
+$medium: #ac9f9a;
+
+$gutter: 100px;
+
+@mixin xxlText {
+	font-size: 150px;
+	line-height: 1.1em;
+	// @include xl {
+	// 	font-size: 90px;
+	// 	line-height: 108px;
+	// }
+	// @include lg {
+	// 	font-size: 75px;
+	// 	line-height: 80px;
+	// }
+	@include md {
+		font-size: 32px;
+		line-height: 40px;
+	}
+}
+
+@mixin xlText {
+	font-size: 65px;
+	line-height: 1.2em;
+	// @include xl {
+	// 	font-size: 34px;
+	// 	line-height: 47px;
+	// }
+	// @include lg {
+	// 	font-size: 30px;
+	// 	line-height: 40px;
+	// }
+	@include md {
+		font-size: 20px;
+		line-height: 27px;
+	}
+}
+
+@mixin lgText {
+	font-size: 40px;
+	line-height: 1.3em;
+}
+
+@mixin mdText {
+	font-size: 27px;
+	line-height: 37px;
+	// @include xl {
+	// 	font-size: 22px;
+	// 	line-height: 30px;
+	// }
+	@include md {
+		font-size: 20px;
+		line-height: 27px;
+	}
+}
+
+@mixin smText {
+	font-size: 22px;
+	line-height: 30px;
+	// @include xl {
+	// 	font-size: 18px;
+	// 	line-height: 27px;
+	// }
+	@include md {
+		font-size: 16px;
+		line-height: 24px;
+	}
+}
+
+@mixin xsText {
+	font-size: 16px;
+	line-height: 24px;
+	// @include xl {
+	// 	font-size: 13px;
+	// 	line-height: 17px;
+	// }
+}
+
+@mixin xl {
+	@media (max-width: 1290px) {
+		@content;
+	}
+}
+
+@mixin lg {
+	@media (max-width: 1024px) {
+		@content;
+	}
+}
+
+@mixin md {
+	@media (max-width: 667px) {
+		@content;
+	}
+}
+
+@mixin sm {
+	@media (max-width: 575px) {
+		@content;
+	}
+}
+
+@mixin hide {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+
+@mixin show {
+	position: unset !important;
+	top: unset !important;
+	left: unset !important;
+}
+
+@font-face {
+	font-family: 'Algebra';
+	src: url('./fonts/Algebra-Regular.woff2') format('woff2'),
+		url('./fonts/Algebra-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Algebra';
+	src: url('./fonts/Algebra-Bold.woff2') format('woff2'),
+		url('./fonts/Algebra-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Akkurat';
+	src: url('./fonts/Akkurat.woff2') format('woff2'),
+		url('./fonts/Akkurat.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Akkurat';
+	src: url('./fonts/Akkurat-Bold.woff2') format('woff2'),
+		url('./fonts/Akkurat-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Candid';
+	src: url('./fonts/Candid.woff2') format('woff2'),
+		url('./fonts/Candid.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
