@@ -1,10 +1,10 @@
 <?php
 function four_corners_scripts() {
 
-	$ver = '1.0.4';
+	$ver = '1.0.5';
 	$env = ( in_array( $_SERVER['REMOTE_ADDR'], array( '127.0.0.1', '::1' ) ) ? 'dev' : 'prod' );
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/scripts'.($env=='prod'?'.min':'').'.js' , array(), $ver, true );
+	wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/scripts.js' , array(), $ver, true );
 
 	// wp_enqueue_style( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' );
 	wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/style.css' );
