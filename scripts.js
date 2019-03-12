@@ -2,6 +2,7 @@
 
 	$('nav a.section-link, nav .active a.page-link').click(function(e) {
 
+		e.preventDefault();
 		var link = $(this)
 		var href = e.target.href;
 		var hash = href.substr(href.indexOf('#'));
@@ -11,6 +12,7 @@
 		$('html, body').animate({
 			scrollTop: targetTop
 		}, 300);
+		history.pushState(null, null, hash);
 
 		// if(!link.is('.page-link')){return}
 		// var otherLinks = $('.page-link:not([href="'+hash+'"])')
