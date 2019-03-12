@@ -32,26 +32,10 @@ function compileSass()  {
 	});
 }
 
-// function browserSync(done) {
-// 	browsersync.init({
-// 		notify: false,
-// 		port: 8888,
-// 		server: {
-// 			baseDir: './'
-// 		}
-// 	});
-// }
-
-// function browserSyncReload(done) {
-// 	browsersync.reload();
-// }
-
-
 function watchFiles() {
 	gulp.watch('./src/*.scss', compileSass);
 }
 
-// gulp.task('start', gulp.parallel(compileSass, watchFiles, browserSync));
 gulp.task('watch', gulp.parallel(compileSass, watchFiles));
 gulp.task('build', gulp.parallel(compileSass));
 

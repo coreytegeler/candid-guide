@@ -16,7 +16,7 @@ html, body {
 	margin: 0;
 	background: #fff;
 	font-family: 'Algebra', serif;
-	@include xsText;
+	@include smText;
 }
 
 body {
@@ -110,7 +110,7 @@ h2, h3, p {
 aside {
 	width: 20rem;
 	height: 100%;
-	padding: 1rem 2rem;
+	padding: 2rem 2.5rem;
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -135,9 +135,6 @@ nav {
 	font-weight: bold;
 }
 .section-links {
-	height: 0;
-	overflow: hidden;
-	transition: all 300ms ease-in-out;
 }
 .section-link {
 	display: block;
@@ -168,11 +165,17 @@ section {
 	width: 100%;
 	margin: 0 0 3rem 0;
 }
-.section-title {
-	padding: 1rem 0;
+h5.section-title {
+	padding: 0 0 1rem 0;
 }
 .section-copy {
-	padding: 0 0 2rem 0;
+	padding: 0 0 2.5rem 0;
+}
+h5.section-title, .section-copy {
+	width: 66%;
+	@include lg {
+		width: 100%;
+	}
 }
 .section-gallery {
 	display: flex;
@@ -202,7 +205,7 @@ header#header {
 .inner {
 	width: 100%;
 	max-width: 1200px;
-	padding: 2rem;
+	padding: 2.5rem;
 }
 
 
