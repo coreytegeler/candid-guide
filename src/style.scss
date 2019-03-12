@@ -197,6 +197,10 @@ h5.section-title, .section-copy {
 		padding-left: .5rem;
 	}
 }
+.gallery-caption {
+	margin: .5rem 0 0 0;
+	@include xsText;
+}
 
 header#header {
 	padding: 0 0 10rem 0;

@@ -133,11 +133,18 @@
 
 											foreach( $section_gallery as $i => $image ):
 
-												echo '<div class="gallery-image">';
+												$image_id = $image['ID'];
 
-													echo wp_get_attachment_image( $image['ID'], 'large' );
+												echo '<figure class="gallery-image">';
 
-												echo '</div>';							
+													echo wp_get_attachment_image( $image_id, 'large' );
+
+													if( $caption = wp_get_attachment_caption( $image_id ) ) {
+														echo '<figcaption class="gallery-caption">' . $caption . '</figcaption>';
+													}
+													
+
+												echo '</figure>';							
 
 											endforeach;
 
