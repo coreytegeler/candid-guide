@@ -134,13 +134,19 @@
 											foreach( $section_gallery as $i => $image ):
 
 												$image_id = $image['ID'];
+												$caption = get_field( 'img_caption', $image_id );
+												$position = get_field( 'position', $image_id );
 
 												echo '<figure class="gallery-image">';
 
+													if( $caption && $position === 'above' ) {
+														echo '<figcaption class="gallery-caption above">' . $caption . '</figcaption>';
+													}
+
 													echo wp_get_attachment_image( $image_id, 'large' );
 
-													if( $caption = wp_get_attachment_caption( $image_id ) ) {
-														echo '<figcaption class="gallery-caption">' . $caption . '</figcaption>';
+													if( $caption && $position === 'below' ) {
+														echo '<figcaption class="gallery-caption below">' . $caption . '</figcaption>';
 													}
 													
 

@@ -1,0 +1,4 @@
+.acf-field[data-name="caption"], 
+.acf-field[data-name="description"] {
+	display: none;
+}

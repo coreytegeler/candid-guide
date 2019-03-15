@@ -1,7 +1,7 @@
 <?php
 function four_corners_scripts() {
 
-	$ver = '1.0.7';
+	$ver = '1.0.8';
 	$env = ( in_array( $_SERVER['REMOTE_ADDR'], array( '127.0.0.1', '::1' ) ) ? 'dev' : 'prod' );
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/scripts.js' , array(), $ver, true );
@@ -27,6 +27,12 @@ function four_corners_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', 'four_corners_scripts' );
+
+function admin_scripts() {
+	wp_register_style( 'admin_style', get_template_directory_uri() . '/admin.css', array(), $ver );
+	wp_enqueue_style( 'admin_style' );
+}
+add_action( 'admin_enqueue_scripts', 'admin_scripts' );
 
 function slugify ( $str ) {
 	return (
