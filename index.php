@@ -113,13 +113,11 @@
 
 								$section_title = get_sub_field( 'title' );
 								$section_slug = slugify( $section_title );
-								$section_copy = get_sub_field( 'copy' );
-								$section_gallery = get_sub_field( 'gallery' );
 
 								echo '<section id="'.$section_slug.'">';
 									echo '<h5 class="section-title"><strong>'.$section_title.'</strong></h5>';
 									
-									if( $section_copy ):
+									if( $section_copy = get_sub_field( 'copy' ) ):
 										
 										echo '<div class="section-copy">';
 											echo $section_copy;
@@ -127,7 +125,13 @@
 
 									endif;
 
-									if( $section_gallery ):
+									if( $gallery_caption = get_sub_field( 'gallery_caption' )  ):
+
+										echo '<div class="gallery-caption">' . $gallery_caption . '</div>';
+
+									endif;
+
+									if( $section_gallery = get_sub_field( 'gallery' ) ):
 
 										echo '<div class="section-gallery">';
 
@@ -140,13 +144,13 @@
 												echo '<figure class="gallery-image">';
 
 													if( $caption && $position === 'above' ) {
-														echo '<figcaption class="gallery-caption above">' . $caption . '</figcaption>';
+														echo '<figcaption class="image-caption above">' . $caption . '</figcaption>';
 													}
 
 													echo wp_get_attachment_image( $image_id, 'large' );
 
 													if( $caption && $position === 'below' ) {
-														echo '<figcaption class="gallery-caption below">' . $caption . '</figcaption>';
+														echo '<figcaption class="image-caption below">' . $caption . '</figcaption>';
 													}
 													
 
