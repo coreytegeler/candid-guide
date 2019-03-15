@@ -16,6 +16,9 @@ html, body {
 	margin: 0;
 	background: #fff;
 	font-family: 'Algebra', serif;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch;
 	@include smText;
 }
 
@@ -39,6 +42,9 @@ h1 {
 }
 h2 {
 	@include xlText;
+	@include md {
+		@include lgText;
+	}
 }
 h3 {
 	@include lgText;
@@ -119,9 +125,13 @@ aside {
 	top: 0;
 	overflow-y: scroll;
 	border-right: 2px solid $orange;
+	@include md {
+		width: 15rem;
+		padding: 1rem 1.25rem;
+	}
 	header {
 		width: 100%;
-		height: 4.8rem;
+		min-height: 4.8rem;
 	}
 }
 
@@ -152,6 +162,9 @@ nav {
 main {
 	width: 100%;
 	padding: 3rem 0 0 20rem;
+	@include md {
+		padding-left: 15rem;
+	}
 }
 
 article.page {
@@ -198,6 +211,11 @@ h5.section-title, .section-copy {
 	}
 	&:nth-child(even) {
 		padding-left: .5rem;
+	}
+	@include md {
+		width: 100%;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
 	}
 }
 .gallery-caption {

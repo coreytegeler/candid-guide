@@ -30,6 +30,10 @@ $gutter: 100px;
 @mixin smText {
 	font-size: 16px;
 	line-height: 22px;
+	@include md {
+		font-size: 12px;
+		line-height: 18px;
+	}
 }
 
 @mixin xsText {
