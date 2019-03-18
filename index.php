@@ -133,13 +133,14 @@
 
 									if( $section_gallery = get_sub_field( 'gallery' ) ):
 
-										echo '<div class="section-gallery">';
+										$position = get_sub_field( 'captions_position' );
+
+										echo '<div class="section-gallery '.$position.'">';
 
 											foreach( $section_gallery as $i => $image ):
 
 												$image_id = $image['ID'];
 												$caption = get_field( 'img_caption', $image_id );
-												$position = get_field( 'position', $image_id );
 
 												echo '<figure class="gallery-image">';
 

@@ -197,6 +197,9 @@ h5.section-title, .section-copy {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
+	&.above {
+		align-items: flex-end;
+	}
 }
 .gallery-image {
 	width: 50%;
@@ -218,20 +221,21 @@ h5.section-title, .section-copy {
 		padding-right: 0 !important;
 	}
 }
+
+.gallery-caption, .image-caption {
+	@include xsText;
+	p {
+		text-indent: 0;
+	}
+}
 .gallery-caption {
 	width: calc(50% - .5rem);
 	margin: 0 0 1rem 0;
-	@include xsText;
 	@include lg {
 		width: 100%;
 	}
 }
 .image-caption {
-	font-family: sans-serif;
-	@include xsText;
-	p {
-		text-indent: 0;
-	}
 	&.above {
 		margin: 0 0 .5rem 0;
 		p:not(:first-child) {
