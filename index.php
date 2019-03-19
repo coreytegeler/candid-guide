@@ -115,7 +115,10 @@
 								$section_slug = slugify( $section_title );
 
 								echo '<section id="'.$section_slug.'">';
-									echo '<h5 class="section-title"><strong>'.$section_title.'</strong></h5>';
+
+									if( $section_title ):
+										echo '<h5 class="section-title"><strong>'.$section_title.'</strong></h5>';
+									endif;
 									
 									if( $section_copy = get_sub_field( 'copy' ) ):
 										
@@ -144,14 +147,14 @@
 
 												echo '<figure class="gallery-image">';
 
-													if( $caption && $position === 'above' ) {
-														echo '<figcaption class="image-caption above">' . $caption . '</figcaption>';
+													if( $position === 'above' ) {
+														echo '<figcaption class="image-caption">' . $caption . '</figcaption>';
 													}
 
 													echo wp_get_attachment_image( $image_id, 'large' );
 
-													if( $caption && $position === 'below' ) {
-														echo '<figcaption class="image-caption below">' . $caption . '</figcaption>';
+													if( $position === 'below' ) {
+														echo '<figcaption class="image-caption">' . $caption . '</figcaption>';
 													}
 													
 
