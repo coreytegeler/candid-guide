@@ -18,8 +18,8 @@ $gutter: 100px;
 }
 
 @mixin lgText {
-	font-size: 36px;
-	line-height: 1.3em;
+	font-size: 32px;
+	line-height: 1.42em;
 }
 
 @mixin mdText {
@@ -29,7 +29,7 @@ $gutter: 100px;
 
 @mixin smText {
 	font-size: 16px;
-	line-height: 22px;
+	line-height: 24px;
 	@include md {
 		font-size: 12px;
 		line-height: 18px;

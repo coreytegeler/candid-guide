@@ -54,10 +54,16 @@
 
 										while( have_rows( 'sections', $id ) ) : the_row();
 											$section_title = get_sub_field( 'title' );
-											$section_slug = slugify( $section_title );
-											echo '<a class="section-link" href="' . $page->url . '#'.$section_slug.'">';
-												echo $section_title;
-											echo '</a>';
+
+											if( $section_title ):
+
+												$section_slug = slugify( $section_title );
+												echo '<a class="section-link" href="' . $page->url . '#'.$section_slug.'">';
+													echo $section_title;
+												echo '</a>';
+
+											endif;
+
 										endwhile;
 
 									echo '</div>';
@@ -137,8 +143,9 @@
 									if( $section_gallery = get_sub_field( 'gallery' ) ):
 
 										$position = get_sub_field( 'captions_position' );
+										$cols = get_sub_field( 'gallery_cols' );
 
-										echo '<div class="section-gallery '.$position.'">';
+										echo '<div class="section-gallery cols-'.$cols.' '.$position.'">';
 
 											foreach( $section_gallery as $i => $image ):
 
@@ -147,16 +154,19 @@
 
 												echo '<figure class="gallery-image">';
 
-													if( $position === 'above' ) {
-														echo '<figcaption class="image-caption">' . $caption . '</figcaption>';
-													}
+													// echo '<div class="fig-inner">';
 
-													echo wp_get_attachment_image( $image_id, 'large' );
+														if( $position === 'above' ) {
+															echo '<figcaption class="image-caption">' . $caption . '</figcaption>';
+														}
 
-													if( $position === 'below' ) {
-														echo '<figcaption class="image-caption">' . $caption . '</figcaption>';
-													}
+														echo wp_get_attachment_image( $image_id, 'large' );
+
+														if( $position === 'below' ) {
+															echo '<figcaption class="image-caption">' . $caption . '</figcaption>';
+														}
 													
+													// echo '</div>';
 
 												echo '</figure>';							
 
