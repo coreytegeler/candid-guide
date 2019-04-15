@@ -15,6 +15,7 @@ html, body {
 	width: 100%;
 	margin: 0;
 	background: #fff;
+	color: $dark;
 	font-family: 'Algebra', serif;
 	overflow-y: scroll;
 	overflow-x: hidden;
@@ -58,7 +59,7 @@ h5 {
 
 a, a:visited {
 	text-decoration: none;
-	color: black;
+	color: $dark;
 }
 
 p {
@@ -93,9 +94,10 @@ li {
 
 h2, h3, p {
 	a {
+		text-decoration: none;
 		padding-bottom: 2px;
-		background-image: linear-gradient(white 50%, $orange 50%);
-		background-position: 0 100%;
+		background-image: linear-gradient(to bottom, white 50%, $dark 50%);
+		background-position: 0 1em;
 		background-repeat: repeat-x;
     background-size: 2px 2px;
 	  text-shadow:
@@ -103,6 +105,10 @@ h2, h3, p {
 	    1px -1px white,
 	    -1px 1px white,
 	    -1px -1px white;
+	}
+	a:hover {
+		background-image: linear-gradient(to right, white 50%, $dark 50%);
+		background-position: 0 1.04em;
 	}
 }
 
@@ -123,7 +129,7 @@ aside {
 	position: fixed;
 	left: 0;
 	top: 0;
-	border-right: 2px solid $orange;
+	border-right: 1px solid $orange;
 	overflow-y: scroll;
 	-webkit-overflow-scrolling: touch;
 	&::-webkit-scrollbar { 
@@ -183,7 +189,11 @@ h3.page-copy {
 
 section {
 	width: 100%;
-	margin: 0 0 3rem 0;
+	margin: 3rem 0 0 0;
+	clear: both;
+	&:first-of-type, &.pseudo {
+		margin: 0;
+	}
 }
 h5.section-title {
 	padding: 1rem 0;
@@ -256,6 +266,10 @@ h5.section-title, .section-copy {
 .gallery-caption {
 	width: calc(50% - .5rem);
 	margin: 0 0 1rem 0;
+	float: left;
+	&.right {
+		padding-left: 1rem;
+	}
 	@include lg {
 		width: 100%;
 	}

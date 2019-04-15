@@ -120,7 +120,11 @@
 								$section_title = get_sub_field( 'title' );
 								$section_slug = slugify( $section_title );
 
-								echo '<section id="'.$section_slug.'">';
+								if( $section_title ):
+									echo '<section id="'.$section_slug.'">';
+								else:
+									echo '<section class="pseudo">';
+								endif;
 
 									if( $section_title ):
 										echo '<h5 class="section-title"><strong>'.$section_title.'</strong></h5>';
@@ -137,6 +141,12 @@
 									if( $gallery_caption = get_sub_field( 'gallery_caption' )  ):
 
 										echo '<div class="gallery-caption">' . $gallery_caption . '</div>';
+
+									endif;
+
+									if( $right_gallery_caption = get_sub_field( 'right_gallery_caption' )  ):
+
+										echo '<div class="gallery-caption right">' . $right_gallery_caption . '</div>';
 
 									endif;
 
