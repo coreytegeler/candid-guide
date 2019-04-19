@@ -106,26 +106,45 @@ h2, h3, p {
 	    -1px 1px white,
 	    -1px -1px white;
 	}
+}
+strong a {
+	background-image: none;
+}
+h2, h3, p, strong {
 	a:hover {
 		background-image: linear-gradient(to right, white 50%, $dark 50%);
 		background-position: 0 1.04em;
 	}
 }
 
+button {
+	padding: 1rem;
+	border: 0;
+	color: inherit;
+	font: inherit;
+	line-height: 1em;
+	overflow: visible;
+	user-select: none;
+	background-color: $yellow;
+	-webkit-appearance: button;
+	&:hover {
+		background-color: $orange;
+		cursor: pointer;
+	}
+}
 
-.candid-logo {
-	.logo-text {
-		font-family: 'Candid';
-	}
-	.screen-reader-text {
-		@include hide;
-	}
+
+.logo-text {
+	font-family: 'Candid';
+}
+.screen-reader-text {
+	@include hide;
 }
 
 aside {
 	width: 20rem;
 	height: 100%;
-	padding: 2rem 2.5rem;
+	padding: 2rem 2.5rem 2rem 2rem;
 	position: fixed;
 	left: 0;
 	top: 0;

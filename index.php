@@ -26,7 +26,11 @@
 			<aside>
 
 				<header>
-					<h4><?php bloginfo( 'description' ) ?></h4>
+					<?php if( !is_home() ): ?>
+						<a href="<?= get_home_url() ?>">
+							<h4>How to be <span class="screen-reader-text">Candid.</span><span class="logo-text">.</span></h4>
+						</a>
+					<?php endif; ?>
 				</header>
 
 				<nav>
