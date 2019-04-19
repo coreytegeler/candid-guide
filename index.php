@@ -28,7 +28,7 @@
 				<header>
 					<?php if( !is_home() ): ?>
 						<a href="<?= get_home_url() ?>">
-							<h4>How to be <span class="screen-reader-text">Candid.</span><span class="logo-text">.</span></h4>
+							How to be <span class="screen-reader-text">Candid.</span><span class="logo-text">.</span>
 						</a>
 					<?php endif; ?>
 				</header>
